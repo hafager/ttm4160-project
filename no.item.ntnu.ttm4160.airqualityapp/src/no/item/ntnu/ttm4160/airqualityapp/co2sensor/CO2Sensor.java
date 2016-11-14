@@ -12,17 +12,19 @@ import java.util.Date;
 
 public class CO2Sensor extends Block {
 	final Serial serial = SerialFactory.createInstance();
+	private boolean running;
 	// Instance parameter. Edit only in overview page.
 	public final int interval;
 	
+	
+	// Do not edit this constructor.
 	public CO2Sensor(int interval) {
 		this.interval = interval;
 	}
-	public CO2Sensor() {
-		this.interval = 5;
-	}
 	
-	public void init(int interval) {
+	
+	
+	public void init() {
 		try {
 			SerialConfig config = new SerialConfig();
 			config.device(SerialPort.getDefaultPort())
@@ -32,9 +34,12 @@ public class CO2Sensor extends Block {
 			.stopBits(StopBits._1)
 			.flowControl(FlowControl.NONE);
 			
-			
 			serial.open(config);
 			serial.write("K 2\r\n");
+			serial.discardInput();
+			//if(!(serial.read(10).toString()==" K 00002\r\n")){
+			//	serial.close();
+			//};
 		}
 		catch(IOException ex) {
 			System.out.println("Failed");
@@ -45,13 +50,6 @@ public class CO2Sensor extends Block {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
-	}
-	
-	
-	public String test() {
-		String msg = "Paradise";
-		System.out.println(msg);
-		return msg;
 	}
 	
 	public String readData() {
@@ -70,7 +68,22 @@ public class CO2Sensor extends Block {
 		}
 		return level;
 	}
+	public void stop() {
+		try {
+			serial.close();
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
+	public int getInterval() {
+		return interval;
+	}
+
 	
 
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <block
     name="CO2Sensor" 
+    purpose="Block for the Cozir CO2 Sensor." 
     uuid="_SycY8KgSEea2h8kSw1NplA" 
     status="under construction" 
     type="block" 

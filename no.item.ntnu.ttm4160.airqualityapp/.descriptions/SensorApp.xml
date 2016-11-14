@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="SensorApp" 
+    uuid="_gPMnYakiEeaxCe7wjWg_QQ" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <block name="b0" uuid="_SycY8KgSEea2h8kSw1NplA"/>
+    </required>
+</block>
