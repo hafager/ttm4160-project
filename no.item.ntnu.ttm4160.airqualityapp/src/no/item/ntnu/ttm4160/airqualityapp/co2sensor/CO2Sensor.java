@@ -53,20 +53,26 @@ public class CO2Sensor extends Block {
 	}
 	
 	public String readData() {
-		String level;
+		String level_hex, level_ascii;
 		try {
 			serial.write("Q\r\n");
-			level = serial.read(10).toString();
+			byte[] byteArray = serial.read(10);
+			//level = byteArray.toString();
+			//System.out.println(byteArray.length);
+			level_hex = byteArrayToString(byteArray);
+			level_ascii = hexToAscii(level_hex);
+			level_ascii = level_ascii.substring(3);
+			
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			level = "Failed";
+			level_ascii = "Failed";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			level = "Failed";
+			level_ascii = "Failed";
 		}
-		return level;
+		return level_ascii;
 	}
 	public void stop() {
 		try {
@@ -87,5 +93,22 @@ public class CO2Sensor extends Block {
 	}
 
 	
+	private String byteArrayToString(byte[] in) {
+	    char out[] = new char[in.length * 2];
+	    for (int i = 0; i < in.length; i++) {
+	        out[i * 2] = "0123456789ABCDEF".charAt((in[i] >> 4) & 15);
+	        out[i * 2 + 1] = "0123456789ABCDEF".charAt(in[i] & 15);
+	    }
+	    return new String(out);
+	}
+	
+	private String hexToAscii(String hex) {
+		StringBuilder output = new StringBuilder();
+	    for (int i = 0; i < hex.length(); i+=2) {
+	        String str = hex.substring(i, i+2);
+	        output.append((char)Integer.parseInt(str, 16));
+	    }
+	    return output.toString();
+	}
 
 }
