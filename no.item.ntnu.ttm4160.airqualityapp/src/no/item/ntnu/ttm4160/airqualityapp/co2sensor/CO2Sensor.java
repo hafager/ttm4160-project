@@ -79,9 +79,11 @@ public class CO2Sensor extends Block {
 			e.printStackTrace();
 		}
 	}
-	
-	public int getInterval() {
-		return interval;
+	public String handleInput(String measurement) {
+		measurement = measurement.substring(0,8);
+		//float value = Float.parseFloat( measurement.substring(2) );
+		return measurement.substring(2);
+
 	}
 
 	
