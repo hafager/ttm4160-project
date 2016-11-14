@@ -4,4 +4,9 @@
     uuid="_PiKT8KgSEea2h8kSw1NplA"
     version="1.0.0"
     >
+    <dependencies>
+        <dependency name="com.bitreactive.library.buffering" uuid="_oelmQPDwEeCxK4vi80n1Xg" version="3.11.2" indirect="true"/>
+        <dependency name="com.bitreactive.library.mqtt" uuid="_iVDkMOJLEeGulKFN7xtCsw" version="2.12.8"/>
+        <dependency name="com.bitreactive.library.timers" uuid="_b0djMBzFEeGAXOPaKszhRg" version="1.6.1" indirect="true"/>
+    </dependencies>
 </project>

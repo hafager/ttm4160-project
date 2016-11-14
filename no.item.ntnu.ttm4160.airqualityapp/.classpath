@@ -11,5 +11,9 @@
 	<classpathentry kind="lib" path="C:/Users/tormod/Downloads/pi4j-1.1/pi4j-1.1/lib/pi4j-gpio-extension.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tormod/Downloads/pi4j-1.1/pi4j-1.1/lib/pi4j-service.jar"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="lib-gen/org.eclipse.paho.client.mqttv3-1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib-gen/bcpkix-jdk15on-153.jar"/>
+	<classpathentry kind="lib" path="lib-gen/persistent-queue.jar"/>
+	<classpathentry kind="lib" path="lib-gen/bcprov-jdk15on-153.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
