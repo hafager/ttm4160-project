@@ -13,14 +13,14 @@ public class Component extends Block {
 	}
 
 	public Parameters init() {
-		MQTTConfigParam p = new MQTTConfigParam("blocks2.bitreactive.com");
+		MQTTConfigParam p = new MQTTConfigParam("nyx.bjornhaug.net");
 		return new Parameters(p, 2); 
 	}
 	
 	public MQTTMessage createMSG(String s) {
 		String ms = s;
 		byte[] b = ms.getBytes();
-		MQTTMessage m = new MQTTMessage(b, "airquality/co2");
+		MQTTMessage m = new MQTTMessage(b, "paradise/api/co2");
 		m.setQoS(2);
 		return m;
 	}
