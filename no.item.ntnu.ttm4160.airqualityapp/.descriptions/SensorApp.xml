@@ -6,6 +6,10 @@
     type="system" 
     >
     <required>
+        <package name="com.bitreactive.library.mqtt"/>
+        <package name="com.bitreactive.library.mqtt.robustmqtt"/>
+        <package name="no.item.ntnu.ttm4160.airqualityapp.sensorapp.component"/>
+        <package name="no.ntnu.item.arctis.runtime"/>
         <block name="b0" uuid="_SycY8KgSEea2h8kSw1NplA"/>
         <block name="b1" uuid="_CDPgcD5UEeSLNMcFh65MeQ"/>
     </required>

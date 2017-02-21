@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <block
-    name="CO2Sensor" 
-    purpose="Block for the Cozir CO2 Sensor." 
-    uuid="_SycY8KgSEea2h8kSw1NplA" 
+    name="Measure CO2" 
+    uuid="_up_cE-MBEeaHceCBjtTQ5w" 
     status="under construction" 
     type="block" 
     >
     <required>
         <package name="com.pi4j.io.serial"/>
-        <package name="no.item.ntnu.ttm4160.airqualityapp.co2sensor"/>
+        <package name="no.item.ntnu.ttm4160.airqualityapp.measureco2"/>
         <package name="no.ntnu.item.arctis.runtime"/>
-        <block name="b0" uuid="_up_cE-MBEeaHceCBjtTQ5w"/>
     </required>
 </block>

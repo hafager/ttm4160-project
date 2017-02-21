@@ -6,6 +6,8 @@ import com.bitreactive.library.mqtt.robustmqtt.RobustMQTT.Parameters;
 
 import no.ntnu.item.arctis.runtime.Block;
 
+//import org.json;
+
 public class Component extends Block {
 
 	public void printCO2(String level) {
@@ -17,9 +19,8 @@ public class Component extends Block {
 		return new Parameters(p, 2); 
 	}
 	
-	public MQTTMessage createMSG(String s) {
-		String ms = s;
-		byte[] b = ms.getBytes();
+	public MQTTMessage createMSG(String co2) {
+		byte[] b = co2.getBytes();
 		MQTTMessage m = new MQTTMessage(b, "paradise/api/co2");
 		m.setQoS(2);
 		return m;

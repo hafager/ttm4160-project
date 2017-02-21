@@ -16,7 +16,8 @@ public class MeasureCO2 extends Block {
                     byte[] byteArray = serial.read(10);
                     String level_hex = MeasureCO2.this.byteArrayToString(byteArray);
                     String level_ascii = MeasureCO2.this.hexToAscii(level_hex);
-                    level_ascii = level_ascii.substring(4);
+                    level_ascii = level_ascii.substring(4).trim();
+                    level_ascii = level_ascii.replaceFirst("^0+(?!$)", "");
                     MeasureCO2.this.sendToBlock("SUCCESS", level_ascii);
                 }
                 catch (IllegalStateException e) {

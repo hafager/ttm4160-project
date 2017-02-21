@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="lib-gen/bcpkix-jdk15on-153.jar"/>
 	<classpathentry kind="lib" path="lib-gen/persistent-queue.jar"/>
 	<classpathentry kind="lib" path="lib-gen/bcprov-jdk15on-153.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tormod/Downloads/java-json.jar/java-json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
