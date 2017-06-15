@@ -1,7 +1,5 @@
 # ttm4160-project
-CO2 sensor project.
+CO2 sensor project. Built on COZIR CO2 sensor.
 
 ## MQTT settings
-blocks2.bitreactive.com
-
-airquality/co2
+Publishes the current value to MQTT.
